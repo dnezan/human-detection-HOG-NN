@@ -64,7 +64,7 @@ def prewitt(b):
 
 
 #Driver Program
-indimage = scipy.misc.imread("test.bmp")
+indimage = scipy.misc.imread("test_color.bmp")
 print(indimage.shape)
 
 #Split the numpy array into RGB channels
@@ -74,7 +74,7 @@ blue=indimage[:,:,2]
 
 grey = (0.299 * red) + (0.587 * green) + (0.114 * blue)
 
-scipy.misc.imsave('test_image.png', grey)
+scipy.misc.imsave('test_grey.bmp', grey)
 toimage(grey).show()
 
 #numpy.savetxt('rgb_raw_values.txt',indimage, delimiter=',', fmt='%i')
