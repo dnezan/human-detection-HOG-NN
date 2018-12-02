@@ -6,17 +6,19 @@ import numpy
 import numpy as np
 
 #initialize the height and width of image
-we = 256  #665
-he = 256  #443
+we = 96  #665
+he = 160  #443
 
 #initialize global numpy arrays used in the Canny Edge Detector
 newgradientgx = np.zeros((he, we))
 newgradientgy = np.zeros((he, we))
 newgradientImage = np.zeros((he, we))
+tan = np.zeros((he, we))
+
 
 #function to perform Prewitt operator
 def prewitt(b):
-    gray_img = np.array(Image.open(b)).astype(np.uint8)
+    gray_img = b
     print("The values of the read image are ")
     print(gray_img)
 
@@ -75,7 +77,18 @@ blue=indimage[:,:,2]
 grey = (0.299 * red) + (0.587 * green) + (0.114 * blue)
 
 scipy.misc.imsave('working_files/test_grey.bmp', grey)
+
+
+prewitt(grey)
+scipy.misc.imsave('working_files/test_x_gradient.bmp', newgradientgx)
+scipy.misc.imsave('working_files/test_y_gradient.bmp', newgradientgy)
+scipy.misc.imsave('working_files/test_magnitude.bmp', newgradientImage)
+
+
 toimage(grey).show()
+toimage(newgradientgx).show()
+toimage(newgradientgy).show()
+toimage(newgradientImage).show()
 
 #numpy.savetxt('rgb_raw_values.txt',indimage, delimiter=',', fmt='%i')
 
