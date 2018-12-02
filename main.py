@@ -74,7 +74,7 @@ blue=indimage[:,:,2]
 
 grey = (0.299 * red) + (0.587 * green) + (0.114 * blue)
 
-scipy.misc.imsave('test_grey.bmp', grey)
+scipy.misc.imsave('working_files/test_grey.bmp', grey)
 toimage(grey).show()
 
 #numpy.savetxt('rgb_raw_values.txt',indimage, delimiter=',', fmt='%i')
