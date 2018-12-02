@@ -17,5 +17,13 @@ The only libraries used in this program is PIL and scipy in order to read and wr
 Converted the color image into a greyscale image using the formula I =(0.299𝑅 + 0.587𝐺 + 0.114𝐵) where R, G and B are the pixel values from the red, green
 and blue channels of the color image.
 
-### Gradient operation (Prewitt's Operator)  
+### Gradient Operation (Prewitt's Operator)
 The Prewitt’s operator is used for gradient operation. If part of the 3 x 3 masks of the Prewitt’s operator lies in the undefined region of the image after Gaussian filtering, output value is set to zero (indicates no edge).
+
+### Compute HOG Features
+To be implemented
+
+### Backpropogation using a Two-Layer Perceptron  
+To be implemented
+
+
