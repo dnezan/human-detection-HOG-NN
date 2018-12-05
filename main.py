@@ -74,7 +74,9 @@ def hog(b):
     cell_size = (8, 8)
     block_size = (16, 16)  # or 2 x 2 cells),
     block_overlap_step_size = 8  #(or 1 cell).
-    print("ok")
+
+    machine_e=np.finfo(float).eps # machine epsilon
+    print(machine_e)
 
 #Driver Program
 indimage = scipy.misc.imread("test_color.bmp")

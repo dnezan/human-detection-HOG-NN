@@ -23,7 +23,7 @@ The Prewitt’s operator is used for gradient operation. If part of the 3 x 3 ma
 ### Compute HOG Features
 To be implemented
 
-L2 norm is used for block normalization. If v is the non-normalized vector containing all histograms in a given block,
+L2 norm is used for block normalization. If v is the non-normalized vector containing all histograms in a given block, and e is machine epsilon
 ![l2](https://github.com/dnezan/human-detection-HOG-NN/blob/master/working_files/readme/norm_f2.svg)
 
 
