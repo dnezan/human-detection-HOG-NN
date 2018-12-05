@@ -23,6 +23,20 @@ The Prewitt’s operator is used for gradient operation. If part of the 3 x 3 ma
 ### Compute HOG Features
 To be implemented
 
+L2 norm is used for block normalization. Let {\displaystyle v} v be the non-normalized vector containing all histograms in a given block, {\displaystyle \|v\|_{k}}
+![l2](https://raw.githubusercontent.com/dnezan/canny-edge-detector/master/output/mask.png)
+
+
+Notes : Refer to lecture notes on how to compute the HOG feature. Use the unsigned representation and
+quantize the computed gradient angle into one of the 9 bins as shown in Table 1 below. If the
+gradient angle is in the range [170, 350) degrees, simply subtract by 180 first. Use the following
+parameter values in your implementation: cell size = 8 x 8 pixels, block size = 16 x 16 pixels (or 2
+x 2 cells), block overlap or step size = 8 pixels (or 1 cell.) Use L2 norm for block normalization.
+Leave the histogram and final descriptor values as floating point numbers. Do not round off to
+integers.
+
+
+
 ### Backpropogation using a Two-Layer Perceptron
 To be implemented
 

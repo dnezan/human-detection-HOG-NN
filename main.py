@@ -69,11 +69,11 @@ def prewitt(b):
 
 #function to extrcat HOG features
 def hog(b):
-    #gray_image = b
-    #window_size = 128 x 64
-    #cell size = 8 x 8
-    #block size = 16 x 16 # or 2 x 2 cells),
-    #block overlap step size = 8 pixels #(or 1 cell).
+    image = b
+    window_size = (128, 64)
+    cell_size = (8, 8)
+    block_size = (16, 16)  # or 2 x 2 cells),
+    block_overlap_step_size = 8  #(or 1 cell).
     print("ok")
 
 #Driver Program
@@ -99,14 +99,13 @@ print(newgradientImage)
 numpy.savetxt('working_files/gradient_x.txt',newgradientImage, delimiter=',', fmt='%i')
 numpy.savetxt('working_files/arctan.txt',tan, delimiter=',', fmt='%i')
 
-print(np.min(tan))
-
-print(np.max(tan))
-
-#hog(newgradientImage)
+hog(newgradientImage)
 
 
-#toimage(grey).show()
+
+#Diagnostic Code Here
+'''
+toimage(grey).show()
 #toimage(newgradientgx).show()
 #toimage(newgradientgy).show()
 #toimage(newgradientImage).show()
@@ -120,3 +119,4 @@ print(np.max(tan))
 #imsave('xgradient.bmp', newgradientgx)
 #imsave('ygradient.bmp', newgradientgy)
 #imsave('magnitude.bmp', newgradientImage)
+'''
