@@ -29,8 +29,8 @@ def prewitt(b):
     vertical = np.array([[-1, -1, -1], [0, 0, 0], [1, 1, 1]])
 
     #offset each edge by 1
-    for i in range(5, h - 5):
-        for j in range(5, w - 5):
+    for i in range(1, h - 1):
+        for j in range(1, w - 1):
             horizontalGrad = (horizontal[0, 0] * gray_img[i - 1, j - 1]) + \
                              (horizontal[0, 1] * gray_img[i - 1, j]) + \
                              (horizontal[0, 2] * gray_img[i - 1, j + 1]) + \
@@ -51,19 +51,30 @@ def prewitt(b):
                            (vertical[2, 1] * gray_img[i + 1, j]) + \
                            (vertical[2, 2] * gray_img[i + 1, j + 1])
 
-            newgradientgx[i, j] = horizontalGrad
-            newgradientgy[i, j] = verticalGrad
+            newgradientgx[i, j] = round(horizontalGrad)
+            newgradientgy[i, j] = round(verticalGrad)
 
             if(newgradientgx[i,j]==0):
                 tan[i,j]=90.00
+            elif (newgradientgx[i, j] == 0 and newgradientgy[i, j] == 0):
+                tan[i, j] = 0.00
             else:
                 tan[i,j]=math.degrees(math.atan(newgradientgy[i,j]/newgradientgx[i,j]))
                 if (tan[i,j]<0):
                     tan[i,j]= tan[i,j] + 360
 
             mag = np.sqrt(pow(horizontalGrad, 2.0) + pow(verticalGrad, 2.0))
-            newgradientImage[i - 1, j - 1] = mag
+            newgradientImage[i, j] = mag
 
+
+#function to extrcat HOG features
+def hog(b):
+    #gray_image = b
+    #window_size = 128 x 64
+    #cell size = 8 x 8
+    #block size = 16 x 16 # or 2 x 2 cells),
+    #block overlap step size = 8 pixels #(or 1 cell).
+    print("ok")
 
 #Driver Program
 indimage = scipy.misc.imread("test_color.bmp")
@@ -84,11 +95,21 @@ scipy.misc.imsave('working_files/test_x_gradient.bmp', newgradientgx)
 scipy.misc.imsave('working_files/test_y_gradient.bmp', newgradientgy)
 scipy.misc.imsave('working_files/test_magnitude.bmp', newgradientImage)
 
+print(newgradientImage)
+numpy.savetxt('working_files/gradient_x.txt',newgradientImage, delimiter=',', fmt='%i')
+numpy.savetxt('working_files/arctan.txt',tan, delimiter=',', fmt='%i')
 
-toimage(grey).show()
-toimage(newgradientgx).show()
-toimage(newgradientgy).show()
-toimage(newgradientImage).show()
+print(np.min(tan))
+
+print(np.max(tan))
+
+#hog(newgradientImage)
+
+
+#toimage(grey).show()
+#toimage(newgradientgx).show()
+#toimage(newgradientgy).show()
+#toimage(newgradientImage).show()
 
 #numpy.savetxt('rgb_raw_values.txt',indimage, delimiter=',', fmt='%i')
 

@@ -26,4 +26,8 @@ To be implemented
 ### Backpropogation using a Two-Layer Perceptron
 To be implemented
 
+###Notes
+When training the neural network, you can stop when the weights do not change much between succesive epochs (or iterations) through the training set. When the weights do not change, the network outputs and hence the squared errors do not change. You can compute the mean squared error as the average of the squared errors over all 20 training samples and use it as the measure to decide when to stop training (i.e., when the mean squared error does not change much between successive epochs, you can stop).  Squared error for a traning sample is computed as E = 1 half(y - hw(x))^2 where y is the label and hw(x) is the network output.
+In general, random initialization is a good strategy for initializing the weight values of a neural network.
+Initialize with all 0's do not work well in general.
 
