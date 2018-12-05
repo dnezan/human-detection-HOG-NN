@@ -23,7 +23,7 @@ The Prewitt’s operator is used for gradient operation. If part of the 3 x 3 ma
 ### Compute HOG Features
 To be implemented
 
-### Backpropogation using a Two-Layer Perceptron  
+### Backpropogation using a Two-Layer Perceptron
 To be implemented
 
 
