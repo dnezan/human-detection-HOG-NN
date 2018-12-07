@@ -23,7 +23,9 @@ The Prewitt’s operator is used for gradient operation. If part of the 3 x 3 ma
 ### Compute HOG Features
 To be implemented
 
-L2 norm is used for block normalization. If v is the non-normalized vector containing all histograms in a given block, and e is machine epsilon
+Unsigned representation of HOG features is used, which means that the histogram channels are evenly spread over 0 to 180 rather than 0 to 360. Therefore, 180 is subtracted from the calculated arctan value.
+
+L2 norm is used for block normalization. If v is the non-normalized vector containing all histograms in a given block, and e is machine epsilon,
 ![l2](https://github.com/dnezan/human-detection-HOG-NN/blob/master/working_files/readme/norm_f2.svg)
 
 

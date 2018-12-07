@@ -13,6 +13,7 @@ he = 160  #443
 newgradientgx = np.zeros((he, we))
 newgradientgy = np.zeros((he, we))
 newgradientImage = np.zeros((he, we))
+unsigned = np.zeros((he, we))
 tan = np.zeros((he, we))
 
 
@@ -74,6 +75,12 @@ def hog(b):
     cell_size = (8, 8)
     block_size = (16, 16)  # or 2 x 2 cells),
     block_overlap_step_size = 8  #(or 1 cell).
+    for i in range(1, he - 1):
+        for j in range(1, we - 1):
+            if (tan[i,j] >= 170 and tan[i,j] < 350):
+                unsigned[i, j] = tan[i, j] - 180
+            else:
+                unsigned[i, j] = tan[i, j]
 
     machine_e=np.finfo(float).eps # machine epsilon
     print(machine_e)
@@ -102,6 +109,7 @@ numpy.savetxt('working_files/gradient_x.txt',newgradientImage, delimiter=',', fm
 numpy.savetxt('working_files/arctan.txt',tan, delimiter=',', fmt='%i')
 
 hog(newgradientImage)
+numpy.savetxt('working_files/unsigned.txt',unsigned, delimiter=',', fmt='%i')
 
 
 
