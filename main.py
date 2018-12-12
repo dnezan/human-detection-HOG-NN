@@ -77,13 +77,21 @@ def hog(b):
     block_overlap_step_size = 8  #(or 1 cell).
     for i in range(1, he - 1):
         for j in range(1, we - 1):
-            if (tan[i,j] >= 170 and tan[i,j] < 350):
+            if (tan[i,j] >= 180 and tan[i,j] < 360):
                 unsigned[i, j] = tan[i, j] - 180
             else:
                 unsigned[i, j] = tan[i, j]
+    for i in range(1, he - 1):
+        for j in range(1, we - 1):
+            if (unsigned[i, j] >= 170 and unsigned[i, j] < 180):
+                print("ok")
+                unsigned[i, j] = unsigned[i, j] - 180
 
     machine_e=np.finfo(float).eps # machine epsilon
     print(machine_e)
+    numpy.savetxt('working_files/unsigned2.txt', unsigned, delimiter=',', fmt='%i')
+
+
 
 #Driver Program
 indimage = scipy.misc.imread("test_color.bmp")
