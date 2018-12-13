@@ -6,8 +6,10 @@ import numpy
 import numpy as np
 
 #initialize the height and width of image
-we = 96  #665
-he = 160  #443
+we = 96  #
+he = 160  #
+cell_we = int(we/8)
+cell_he = int(he/8)
 
 #initialize global numpy arrays used in the Canny Edge Detector
 newgradientgx = np.zeros((he, we))
@@ -15,6 +17,7 @@ newgradientgy = np.zeros((he, we))
 newgradientImage = np.zeros((he, we))
 unsigned = np.zeros((he, we))
 tan = np.zeros((he, we))
+cell = np.zeros((cell_he, cell_we, 9))
 
 
 #function to perform Prewitt operator
@@ -71,32 +74,91 @@ def prewitt(b):
 #function to extrcat HOG features
 def hog(b):
     image = b
-    window_size = (128, 64)
-    cell_size = (8, 8)
-    block_size = (16, 16)  # or 2 x 2 cells),
-    block_overlap_step_size = 8  #(or 1 cell).
     for i in range(1, he - 1):
         for j in range(1, we - 1):
             if (tan[i,j] >= 180 and tan[i,j] < 360):
                 unsigned[i, j] = tan[i, j] - 180
             else:
                 unsigned[i, j] = tan[i, j]
-    for i in range(1, he - 1):
-        for j in range(1, we - 1):
-            if (unsigned[i, j] >= 170 and unsigned[i, j] < 180):
-                print("ok")
-                unsigned[i, j] = unsigned[i, j] - 180
+    #for i in range(1, he - 1):
+    #    for j in range(1, we - 1):
+    #        if (unsigned[i, j] >= 170 and unsigned[i, j] < 180):
+    #            unsigned[i, j] = unsigned[i, j] - 180
 
-    machine_e=np.finfo(float).eps # machine epsilon
-    print(machine_e)
+    #Create cells
+    for i in range(1, cell_he + 1):
+        for j in range(1, cell_we + 1):
+            x_flag=(i * 8) - 8
+            y_flag = (j * 8) - 8
+            for x in range(x_flag, x_flag + 8):
+                for y in range(y_flag, y_flag + 8):
+
+                    #Storing bin values
+                    if (tan[x, y] >= 0 and tan[x, y] < 20):
+                        ratio = ((20 - tan[x, y])/20.0)
+                        cell[i - 1, j - 1, 0] = cell[i - 1, j - 1, 1] + (ratio * newgradientImage[x, y])
+                        cell[i - 1, j - 1, 1] = cell[i - 1, j - 1, 1] + ((1 - ratio) * newgradientImage[x, y])
+
+                    if (tan[x, y] >= 20 and tan[x, y] < 40):
+                        ratio = ((40 - tan[x, y])/20.0)
+                        cell[i - 1, j - 1, 1] = cell[i - 1, j - 1, 1] + (ratio * newgradientImage[x, y])
+                        cell[i - 1, j - 1, 2] = cell[i - 1, j - 1, 1] + ((1 - ratio) * newgradientImage[x, y])
+
+                    if (tan[x, y] >= 40 and tan[x, y] < 60):
+                        ratio = ((60 - tan[x, y]) / 20.0)
+                        cell[i - 1, j - 1, 2] = cell[i - 1, j - 1, 1] + (ratio * newgradientImage[x, y])
+                        cell[i - 1, j - 1, 3] = cell[i - 1, j - 1, 1] + ((1 - ratio) * newgradientImage[x, y])
+
+                    if (tan[x, y] >= 60 and tan[x, y] < 80):
+                        ratio = ((80 - tan[x, y]) / 20.0)
+                        cell[i - 1, j - 1, 3] = cell[i - 1, j - 1, 1] + (ratio * newgradientImage[x, y])
+                        cell[i - 1, j - 1, 4] = cell[i - 1, j - 1, 1] + ((1 - ratio) * newgradientImage[x, y])
+
+                    if (tan[x, y] >= 80 and tan[x, y] < 100):
+                        ratio = ((100 - tan[x, y]) / 20.0)
+                        cell[i - 1, j - 1, 4] = cell[i - 1, j - 1, 1] + (ratio * newgradientImage[x, y])
+                        cell[i - 1, j - 1, 5] = cell[i - 1, j - 1, 1] + ((1 - ratio) * newgradientImage[x, y])
+
+                    if (tan[x, y] >= 100 and tan[x, y] < 120):
+                        ratio = ((120 - tan[x, y]) / 20.0)
+                        cell[i - 1, j - 1, 5] = cell[i - 1, j - 1, 1] + (ratio * newgradientImage[x, y])
+                        cell[i - 1, j - 1, 6] = cell[i - 1, j - 1, 1] + ((1 - ratio) * newgradientImage[x, y])
+
+                    if (tan[x, y] >= 120 and tan[x, y] < 140):
+                        ratio = ((140 - tan[x, y]) / 20.0)
+                        cell[i - 1, j - 1, 6] = cell[i - 1, j - 1, 1] + (ratio * newgradientImage[x, y])
+                        cell[i - 1, j - 1, 7] = cell[i - 1, j - 1, 1] + ((1 - ratio) * newgradientImage[x, y])
+
+                    if (tan[x, y] >= 140 and tan[x, y] < 160):
+                        ratio = ((160 - tan[x, y]) / 20.0)
+                        cell[i - 1, j - 1, 7] = cell[i - 1, j - 1, 1] + (ratio * newgradientImage[x, y])
+                        cell[i - 1, j - 1, 8] = cell[i - 1, j - 1, 1] + ((1 - ratio) * newgradientImage[x, y])
+
+                    if (tan[x, y] >= 160 and tan[x, y] < 180):
+                        ratio = ((140 - tan[x, y]) / 20.0)
+                        cell[i - 1, j - 1, 8] = cell[i - 1, j - 1, 1] + (ratio * newgradientImage[x, y])
+                        cell[i - 1, j - 1, 0] = cell[i - 1, j - 1, 1] + ((1 - ratio) * newgradientImage[x, y])
+
+    #L2 Normalization
+    for i in range(0, cell_he):
+        for j in range(0, cell_we):
+            pass
+
+
+
+
+    #machine_e=np.finfo(float).eps # machine epsilon
+    #print(machine_e)
     numpy.savetxt('working_files/unsigned2.txt', unsigned, delimiter=',', fmt='%i')
 
 
 
 #Driver Program
 indimage = scipy.misc.imread("test_color.bmp")
+print("shape is")
 print(indimage.shape)
-
+print("o")
+print(cell.shape)
 #Split the numpy array into RGB channels
 red=indimage[:,:,0]
 green=indimage[:,:,1]
@@ -105,7 +167,6 @@ blue=indimage[:,:,2]
 grey = (0.299 * red) + (0.587 * green) + (0.114 * blue)
 
 scipy.misc.imsave('working_files/test_grey.bmp', grey)
-
 
 prewitt(grey)
 scipy.misc.imsave('working_files/test_x_gradient.bmp', newgradientgx)
@@ -116,10 +177,14 @@ print(newgradientImage)
 numpy.savetxt('working_files/gradient_x.txt',newgradientImage, delimiter=',', fmt='%i')
 numpy.savetxt('working_files/arctan.txt',tan, delimiter=',', fmt='%i')
 
+print("diagnostics")
+print(np.shape(newgradientImage))
+
 hog(newgradientImage)
+
 numpy.savetxt('working_files/unsigned.txt',unsigned, delimiter=',', fmt='%i')
 
-
+#print(cell)
 
 #Diagnostic Code Here
 '''
