@@ -18,6 +18,7 @@ newgradientImage = np.zeros((he, we))
 unsigned = np.zeros((he, we))
 tan = np.zeros((he, we))
 cell = np.zeros((cell_he, cell_we, 9))
+block = np.zeros((cell_he, cell_we, 9))
 
 
 #function to perform Prewitt operator
@@ -80,10 +81,14 @@ def hog(b):
                 unsigned[i, j] = tan[i, j] - 180
             else:
                 unsigned[i, j] = tan[i, j]
-    #for i in range(1, he - 1):
-    #    for j in range(1, we - 1):
-    #        if (unsigned[i, j] >= 170 and unsigned[i, j] < 180):
-    #            unsigned[i, j] = unsigned[i, j] - 180
+
+    #If range from -10 to 0 is required
+    '''
+    for i in range(1, he - 1):
+        for j in range(1, we - 1):
+            if (unsigned[i, j] >= 170 and unsigned[i, j] < 180):
+                unsigned[i, j] = unsigned[i, j] - 180
+    '''
 
     #Create cells
     for i in range(1, cell_he + 1):
@@ -140,11 +145,31 @@ def hog(b):
                         cell[i - 1, j - 1, 0] = cell[i - 1, j - 1, 1] + ((1 - ratio) * newgradientImage[x, y])
 
     #L2 Normalization
-    for i in range(0, cell_he):
-        for j in range(0, cell_we):
-            pass
+    final_feature = np.zeros(0)
+    temp = np.zeros(0)
+    temp2 = 0
+    count=0
+    for i in range(0, cell_he-1):
+        for j in range(0, cell_we-1):
+            for k in range(0, 9):
+                temp = numpy.append(temp, cell[i,j,k])
+            for k in range(0, 9):
+                temp = numpy.append(temp, cell[i + 1, j, k])
+            for k in range(0, 9):
+                temp = numpy.append(temp, cell[i, j + 1, k])
+            for k in range(0, 9):
+                temp = numpy.append(temp, cell[i+1, j+1, k])
+            for k in range(0,36):
+                temp2 = temp2 + temp[k]*temp[k]
+            normalization_factor = math.sqrt(temp2)
+            temp = np.true_divide(temp, normalization_factor)
 
+            for k in range(0, 36):
+                final_feature = numpy.append(final_feature, temp[k])
+            temp2 = 0
+            temp = np.zeros(0)
 
+    print(np.shape(final_feature))
 
 
     #machine_e=np.finfo(float).eps # machine epsilon
@@ -185,7 +210,6 @@ hog(newgradientImage)
 numpy.savetxt('working_files/unsigned.txt',unsigned, delimiter=',', fmt='%i')
 
 #print(cell)
-
 #Diagnostic Code Here
 '''
 toimage(grey).show()
