@@ -1,6 +1,4 @@
-from PIL import Image
 import scipy.misc
-from scipy.misc import toimage, imsave
 import math
 import numpy
 import numpy as np
@@ -160,35 +158,35 @@ def hog(b):
             for k in range(0, 9):
                 temp = numpy.append(temp, cell[i+1, j+1, k])
             for k in range(0,36):
-                temp2 = temp2 + temp[k]*temp[k]
+                temp2 = temp2 + (temp[k]*temp[k])
+                #print(temp2)
             normalization_factor = math.sqrt(temp2)
-            temp = np.true_divide(temp, normalization_factor)
-
-            for k in range(0, 36):
-                final_feature = numpy.append(final_feature, temp[k])
+            print(normalization_factor)
+            #print(temp)
+            temp = np.divide(temp, float(normalization_factor))
+            print(temp)
+            final_feature = numpy.append(final_feature, temp)
             temp2 = 0
             temp = np.zeros(0)
 
     print(np.shape(final_feature))
+    print(final_feature)
+    numpy.savetxt('working_files/final_features.txt', final_feature, delimiter=',', fmt='%f')
+
+def neural():
+    pass
 
 
-    #machine_e=np.finfo(float).eps # machine epsilon
-    #print(machine_e)
-    numpy.savetxt('working_files/unsigned2.txt', unsigned, delimiter=',', fmt='%i')
 
 
 
 #Driver Program
 indimage = scipy.misc.imread("test_color.bmp")
-print("shape is")
-print(indimage.shape)
-print("o")
-print(cell.shape)
+
 #Split the numpy array into RGB channels
 red=indimage[:,:,0]
 green=indimage[:,:,1]
 blue=indimage[:,:,2]
-
 grey = (0.299 * red) + (0.587 * green) + (0.114 * blue)
 
 scipy.misc.imsave('working_files/test_grey.bmp', grey)
@@ -199,31 +197,9 @@ scipy.misc.imsave('working_files/test_y_gradient.bmp', newgradientgy)
 scipy.misc.imsave('working_files/test_magnitude.bmp', newgradientImage)
 
 print(newgradientImage)
-numpy.savetxt('working_files/gradient_x.txt',newgradientImage, delimiter=',', fmt='%i')
-numpy.savetxt('working_files/arctan.txt',tan, delimiter=',', fmt='%i')
-
-print("diagnostics")
-print(np.shape(newgradientImage))
+numpy.savetxt('working_files/gradient_x.txt',newgradientImage, delimiter=',', fmt='%f')
+numpy.savetxt('working_files/arctan.txt',tan, delimiter=',', fmt='%f')
 
 hog(newgradientImage)
 
-numpy.savetxt('working_files/unsigned.txt',unsigned, delimiter=',', fmt='%i')
-
-#print(cell)
-#Diagnostic Code Here
-'''
-toimage(grey).show()
-#toimage(newgradientgx).show()
-#toimage(newgradientgy).show()
-#toimage(newgradientImage).show()
-
-#numpy.savetxt('rgb_raw_values.txt',indimage, delimiter=',', fmt='%i')
-
-#print(indimage)
-#toimage(newgradientgx).show()
-#numpy.savetxt('gradient255.txt',newgradientImage, delimiter=',', fmt='%i')
-#
-#imsave('xgradient.bmp', newgradientgx)
-#imsave('ygradient.bmp', newgradientgy)
-#imsave('magnitude.bmp', newgradientImage)
-'''
+neural()
