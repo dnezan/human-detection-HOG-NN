@@ -4,21 +4,8 @@
     <list default="true" id="ef527bc4-9ec3-42b1-8208-9630074b60e5" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_mag0000053a_cut.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_mag0000062a_cut.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_mag0000093a_cut.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_mago_person__no_bike_213_cut.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_mago_person__no_bike_247_cut.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_xgrad0000053a_cut.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_xgrad0000062a_cut.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_xgrad0000093a_cut.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_xgrado_person__no_bike_213_cut.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_xgrado_person__no_bike_247_cut.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_ygrad0000053a_cut.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_ygrad0000062a_cut.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_ygrad0000093a_cut.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_ygrado_person__no_bike_213_cut.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_ygrado_person__no_bike_247_cut.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/working_files/final_features.txt" beforeDir="false" afterPath="$PROJECT_DIR$/working_files/final_features.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/working_files/test_grey.bmp" beforeDir="false" afterPath="$PROJECT_DIR$/working_files/test_grey.bmp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -41,8 +28,8 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
-              <caret line="325" column="59" selection-start-line="325" selection-start-column="59" selection-end-line="325" selection-end-column="59" />
+            <state relative-caret-position="509">
+              <caret line="339" column="23" selection-start-line="339" selection-start-column="23" selection-end-line="339" selection-end-column="23" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -475,8 +462,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="325" column="59" selection-start-line="325" selection-start-column="59" selection-end-line="325" selection-end-column="59" />
+        <state relative-caret-position="509">
+          <caret line="339" column="23" selection-start-line="339" selection-start-column="23" selection-end-line="339" selection-end-column="23" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>

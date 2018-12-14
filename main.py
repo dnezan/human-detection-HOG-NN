@@ -17,6 +17,7 @@ ff=[]
 test_feature = np.array([])
 assign = 0
 arr = []
+hog_gen=[]
 
 #initialize global numpy arrays used in the Canny Edge Detector
 newgradientgx = np.zeros((he, we))
@@ -81,6 +82,7 @@ def prewitt(b):
 
 #function to extrcat HOG features
 def hog(b):
+    global hog_gen
     global training_set_inputs
     global arr
     global test_feature
@@ -176,6 +178,7 @@ def hog(b):
     numpy.savetxt('working_files/final_features.txt', final_feature, delimiter=',', fmt='%f')
     training_set_inputs = np.append(training_set_inputs, np.array([final_feature.flatten()]) , axis=0)
 
+
 #Defining the Neural Network Architecture
 class NeuronLayer():
     def __init__(self, number_of_neurons, number_of_inputs_per_neuron):
@@ -243,6 +246,9 @@ for filepath in glob.iglob('input/Train_Positive/*.bmp'):
     scipy.misc.imsave('train/train_ygrad' + i, newgradientgy)
     scipy.misc.imsave('train/train_mag' + i, newgradientImage)
     hog(newgradientImage)
+
+    numpy.savetxt('train/hog_' + i + '.csv', test_feature, delimiter=",")
+
     pic_number = pic_number + 1
 
 print("Generating HOG for Negative Dataset")
@@ -308,6 +314,8 @@ for filepath in glob.iglob('input/Test_Neg/*.bmp'):
     hog(newgradientImage)
     pic_number = pic_number + 1
     hidden_state, output = neural_network.predict(test_feature)
+
+
     print("THE OUTPUT IS")
     print(output)
 
@@ -329,6 +337,7 @@ for filepath in glob.iglob('input/Test_Positive/*.bmp'):
     hog(newgradientImage)
     pic_number = pic_number + 1
     hidden_state, output = neural_network.predict(test_feature)
+    numpy.savetxt('test/hog_' + i + '.csv', test_feature, delimiter=",")
     #print("THE OUTPUT IS")
     print(output)
     #print('%f' % (output))
