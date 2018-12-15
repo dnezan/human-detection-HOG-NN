@@ -205,7 +205,7 @@ class NeuralNetwork():
     # Training of the Neural Network
     def train(self, training_set_inputs, training_set_outputs, number_of_training_iterations):
         for iteration in range(number_of_training_iterations):
-            # Pass the training set through our neural network
+            # Use the training set
             output_from_layer_1, output_from_layer_2 = self.predict(training_set_inputs)
 
             # Calculation of error in second layer
@@ -282,16 +282,16 @@ layer1 = NeuronLayer(250, 7524)
 # Create layer 2 (a single output neuron with 250 inputs)
 layer2 = NeuronLayer(1, 250)
 
-# Combine the layers to create a neural network
+# Layers are combined
 neural_network = NeuralNetwork(layer1, layer2)
 
-#Define the output values for the training data
+# Define the output values for the training data
 training_set_outputs = array([[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0 ,0 ,0 ,0 ,0]]).T
 
-#Neural Network is trained using the training input and output with 10000 iterations
+# Neural Network is trained using the training input and output with 10000 iterations
 neural_network.train(training_set_inputs, training_set_outputs, 10000)
 
-#Save the complete training set input data
+# Save the complete training set input data
 numpy.savetxt("foo.csv", training_set_inputs, delimiter=",")
 
 # Test the neural network with the given images
@@ -314,8 +314,10 @@ for filepath in glob.iglob('input/Test_Neg/*.bmp'):
     hog(newgradientImage)
     pic_number = pic_number + 1
     hidden_state, output = neural_network.predict(test_feature)
-
-
+    if (output >= 0.5):
+        print("human")
+    else:
+        print("not human")
     print("THE OUTPUT IS")
     print(output)
 
@@ -340,4 +342,8 @@ for filepath in glob.iglob('input/Test_Positive/*.bmp'):
     numpy.savetxt('test/hog_' + i + '.csv', test_feature, delimiter=",")
     #print("THE OUTPUT IS")
     print(output)
+    if(output>= 0.5):
+        print("human")
+    else:
+        print("not human")
     #print('%f' % (output))
