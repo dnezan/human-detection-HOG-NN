@@ -21,29 +21,13 @@ and blue channels of the color image.
 The Prewitt’s operator is used for gradient operation. If part of the 3 x 3 masks of the Prewitt’s operator lies in the undefined region of the image after Gaussian filtering, output value is set to zero (indicates no edge).
 
 ### Compute HOG Features
-To be implemented
-
-Unsigned representation of HOG features is used, which means that the histogram channels are evenly spread over 0 to 180 rather than 0 to 360. Therefore, 180 is subtracted from the calculated arctan value.
-
-L2 norm is used for block normalization. If v is the non-normalized vector containing all histograms in a given block, and e is machine epsilon,
+Unsigned representation of HOG features is used, which means that the histogram channels are evenly spread over 0 to 180 rather than 0 to 360. Therefore, 180 is subtracted from the calculated arctan value. The HOG features are computed and stored in 9 bins for each cell.
+ L2 norm is used for block normalization. If v is the non-normalized vector containing all histograms in a given block, and e is machine epsilon,
 ![l2](https://github.com/dnezan/human-detection-HOG-NN/blob/master/working_files/readme/norm_f2.svg)
 
+Cell size = 8 x 8 pixels
+Block size = 16 x 16 pixels
+Block overlap or step size = 8 pixels
 
-Notes : Refer to lecture notes on how to compute the HOG feature. Use the unsigned representation and
-quantize the computed gradient angle into one of the 9 bins as shown in Table 1 below. If the
-gradient angle is in the range [170, 350) degrees, simply subtract by 180 first. Use the following
-parameter values in your implementation: cell size = 8 x 8 pixels, block size = 16 x 16 pixels (or 2
-x 2 cells), block overlap or step size = 8 pixels (or 1 cell.) Use L2 norm for block normalization.
-Leave the histogram and final descriptor values as floating point numbers. Do not round off to
-integers.
-
-
-
-### Backpropogation using a Two-Layer Perceptron
-To be implemented
-
-###Notes
-When training the neural network, you can stop when the weights do not change much between succesive epochs (or iterations) through the training set. When the weights do not change, the network outputs and hence the squared errors do not change. You can compute the mean squared error as the average of the squared errors over all 20 training samples and use it as the measure to decide when to stop training (i.e., when the mean squared error does not change much between successive epochs, you can stop).  Squared error for a traning sample is computed as E = 1 half(y - hw(x))^2 where y is the label and hw(x) is the network output.
-In general, random initialization is a good strategy for initializing the weight values of a neural network.
-Initialize with all 0's do not work well in general.
-
+### Backpropogation using a Two-Layer Perceptron  
+A two layer perceptron is used with RELU being used as the activation function.

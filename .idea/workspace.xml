@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef527bc4-9ec3-42b1-8208-9630074b60e5" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,20 +14,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="25" column="205" selection-start-line="25" selection-start-column="205" selection-end-line="25" selection-end-column="205" />
+            <state relative-caret-position="651">
+              <caret line="31" column="50" selection-start-line="31" selection-start-column="50" selection-end-line="31" selection-end-column="50" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="319" column="26" selection-start-line="319" selection-start-column="26" selection-end-line="319" selection-end-column="26" />
+            <state relative-caret-position="82">
+              <caret line="316" column="23" lean-forward="true" selection-start-line="316" selection-start-column="23" selection-end-line="316" selection-end-column="23" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -37,7 +38,7 @@
       <file leaf-file-name="scratchpad.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/working_files/scratchpad.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
+            <state relative-caret-position="588">
               <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
             </state>
           </provider>
@@ -46,7 +47,7 @@
       <file leaf-file-name="final_features.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/working_files/final_features.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-29741">
+            <state relative-caret-position="73080">
               <caret line="3480" column="3" selection-start-line="3480" selection-start-column="3" selection-end-line="3480" selection-end-column="3" />
             </state>
           </provider>
@@ -85,9 +86,9 @@
       <list>
         <option value="$PROJECT_DIR$/input/main.py" />
         <option value="$PROJECT_DIR$/del.py" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/working_files/scratchpad.py" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -105,7 +106,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -122,6 +122,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -225,12 +226,12 @@
     <frame x="-8" y="22" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15279241" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15279241" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2801724" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2801724" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -245,19 +246,19 @@
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2801724" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15279241" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2801724" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -267,6 +268,68 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="25" column="205" selection-start-line="25" selection-start-column="205" selection-end-line="25" selection-end-column="205" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/working_files/scratchpad.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/working_files/final_features.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="73080">
+          <caret line="3480" column="3" selection-start-line="3480" selection-start-column="3" selection-end-line="3480" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6699">
+          <caret line="319" column="26" selection-end-line="348" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="25" column="205" selection-start-line="25" selection-start-column="205" selection-end-line="25" selection-end-column="205" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/working_files/scratchpad.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/working_files/final_features.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="73080">
+          <caret line="3480" column="3" selection-start-line="3480" selection-start-column="3" selection-end-line="3480" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6699">
+          <caret line="319" column="26" selection-end-line="348" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
@@ -422,13 +485,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/del.py" />
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="25" column="205" selection-start-line="25" selection-start-column="205" selection-end-line="25" selection-end-column="205" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/working_files/unsigned.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -445,25 +501,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/working_files/final_features.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-29741">
+        <state relative-caret-position="73080">
           <caret line="3480" column="3" selection-start-line="3480" selection-start-column="3" selection-end-line="3480" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/working_files/scratchpad.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
+        <state relative-caret-position="588">
           <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="319" column="26" selection-start-line="319" selection-start-column="26" selection-end-line="319" selection-end-column="26" />
+        <state relative-caret-position="82">
+          <caret line="316" column="23" lean-forward="true" selection-start-line="316" selection-start-column="23" selection-end-line="316" selection-end-column="23" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="651">
+          <caret line="31" column="50" selection-start-line="31" selection-start-column="50" selection-end-line="31" selection-end-column="50" />
         </state>
       </provider>
     </entry>
